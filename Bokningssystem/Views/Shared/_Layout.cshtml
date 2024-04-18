@@ -7,59 +7,23 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Bokningssystem.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="templates/assets/css/main.css" />
+    <link rel="stylesheet" href="templates/assets/css/main.css" asp-append-version="true" />
     <noscript><link rel="stylesheet" href="templates/assets/css/noscript.css" /></noscript>
 </head>
-<body>
-@*     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bokningssystem</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header> *@
 
     <body class="is-preload">
 
         <!-- Header -->
         <header id="header">
-            <a href="index.html" class="title">Kvarnnibble musteri</a>
+            <a class="title">Kvarnnibble musteri</a>
             <nav>
                 <ul>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Hem</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Bokningsinfo</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Booking">Bokning</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Faq">Frågor & svar</a></li>
                 </ul>
             </nav>
         </header>
-
-@*         <!-- Wrapper -->
-        <div id="wrapper">
-
-            <!-- Main -->
-            <section id="main" class="wrapper">
-                <div class="inner">
-                    <h1 class="major">A Generic Page</h1>
-                    <span class="image fit"><img src="templates/images/pic04.jpg" alt="" /></span>
-                    <p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-                </div>
-            </section>
-
-        </div> *@
 
         <div class="container">
             <main role="main" class="pb-3">
@@ -86,19 +50,7 @@
         <script src="templates/assets/js/util.js"></script>
         <script src="templates/assets/js/main.js"></script>
 
+        @await RenderSectionAsync("Scripts", required: false)
     </body>
 
-
- 
-
-@*     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Bokningssystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer> *@
-@*     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script> *@
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
 </html>
